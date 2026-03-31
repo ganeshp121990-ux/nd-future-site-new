@@ -24,15 +24,15 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section id="testimonials" className="bg-[#050505] text-white py-32 px-6">
+    <section id="testimonials" className="bg-white text-deepBlue py-20 md:py-32 lg:py-48 px-6 lg:px-12">
       <div className="max-w-7xl mx-auto">
 
         {/* HEADER */}
-        <div className="text-center max-w-3xl mx-auto mb-20">
+        <div className="text-center max-w-4xl mx-auto mb-20 md:mb-32">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            className="text-[#C6A96B] text-xs tracking-[0.3em] uppercase mb-6"
+            className="text-deepBlue/50 font-medium text-xs tracking-[0.25em] uppercase mb-8"
           >
             Client Perspective
           </motion.p>
@@ -40,7 +40,7 @@ export default function Testimonials() {
           <motion.h2
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-5xl font-semibold leading-tight"
+            className="text-4xl md:text-5xl lg:text-6xl font-medium leading-[1.1] tracking-tight font-heading"
           >
             Trusted by founders,
             <br />
@@ -49,32 +49,32 @@ export default function Testimonials() {
         </div>
 
         {/* GRID */}
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12 md:gap-16">
           {testimonials.map((t, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.1 }}
-              className="border border-white/10 rounded-xl p-8 bg-white/[0.02] backdrop-blur-sm"
+              className="bg-creme/50 rounded-2xl p-10 transition-colors hover:bg-creme flex flex-col justify-between"
             >
-              <p className="text-gray-300 leading-relaxed">
+              <p className="text-deepBlue/70 font-light text-lg leading-relaxed italic tracking-wide">
                 “{t.quote}”
               </p>
 
-              <div className="mt-8">
-                <p className="text-sm font-medium">{t.name}</p>
-                <p className="text-xs text-gray-500">{t.role}</p>
+              <div className="mt-12 flex flex-col border-t border-deepBlue/5 pt-6">
+                <p className="text-sm font-medium tracking-wide text-deepBlue">{t.name}</p>
+                <p className="text-[11px] uppercase tracking-[0.2em] font-medium text-deepBlue/40 mt-2">{t.role}</p>
               </div>
             </motion.div>
           ))}
         </div>
 
         {/* TRUST STRIP */}
-        <div className="mt-24 border-t border-white/10 pt-16 text-center">
-          <p className="text-gray-400 text-sm">
+        <div className="mt-24 md:mt-40 border-t border-deepBlue/5 pt-16 md:pt-20 text-center">
+          <p className="text-deepBlue/50 text-base max-w-2xl mx-auto font-light tracking-wide">
             Confidentiality and discretion are central to every engagement.
-            Client names and data are protected.
+            Client names and data are strictly protected.
           </p>
         </div>
 

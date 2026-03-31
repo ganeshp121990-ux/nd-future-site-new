@@ -30,15 +30,15 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="services" className="bg-[#050505] text-white py-32 px-6">
+    <section id="services" className="bg-creme text-deepBlue py-20 md:py-32 lg:py-48 px-6 lg:px-12">
       <div className="max-w-7xl mx-auto">
 
         {/* HEADER */}
-        <div className="text-center max-w-3xl mx-auto mb-20">
+        <div className="text-center max-w-4xl mx-auto mb-32">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            className="text-[#C6A96B] text-xs tracking-[0.3em] uppercase mb-6"
+            className="text-deepBlue/50 font-medium text-xs tracking-[0.25em] uppercase mb-8"
           >
             Services
           </motion.p>
@@ -46,7 +46,7 @@ export default function Services() {
           <motion.h2
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-5xl font-semibold leading-tight"
+            className="text-4xl md:text-5xl lg:text-6xl font-medium leading-[1.1] tracking-tight font-heading"
           >
             Built for modern UK businesses
             <br />
@@ -56,7 +56,7 @@ export default function Services() {
           <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            className="mt-6 text-gray-400"
+            className="mt-8 text-deepBlue/60 font-light text-xl tracking-wide max-w-2xl mx-auto"
           >
             We combine compliance, advisory, and forward planning to give
             companies clarity, control, and confidence as they scale.
@@ -64,54 +64,52 @@ export default function Services() {
         </div>
 
         {/* GRID */}
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12 md:gap-16">
           {services.map((s, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.05 }}
-              className="group border border-white/10 rounded-xl p-8 bg-white/[0.02] backdrop-blur-sm hover:border-[#C6A96B]/40 transition"
+              onClick={() => {
+                const target = document.getElementById("contact");
+                if (target) target.scrollIntoView({ behavior: 'smooth' });
+              }}
+              className="group relative pt-10 hover:-translate-y-2 transition-transform duration-500 cursor-pointer"
             >
-              <div className="mb-6 h-px w-12 bg-[#C6A96B]" />
+              <div className="absolute top-0 left-0 h-[1px] w-12 bg-deepBlue/20 group-hover:w-full group-hover:bg-deepBlue transition-all duration-700" />
 
-              <h3 className="text-xl font-medium mb-4">
+              <h3 className="text-2xl font-medium mb-5 font-heading text-deepBlue tracking-tight">
                 {s.title}
               </h3>
 
-              <p className="text-gray-400 text-sm leading-relaxed">
+              <p className="text-deepBlue/60 text-base leading-relaxed font-light tracking-wide">
                 {s.desc}
               </p>
 
-              <div className="mt-6 text-xs tracking-widest text-gray-500 uppercase">
-                Learn more →
+              <div className="mt-8 inline-block text-[11px] tracking-[0.2em] font-medium uppercase text-deepBlue/40 group-hover:text-deepBlue transition-colors duration-300">
+                Explore Advisory →
               </div>
             </motion.div>
           ))}
         </div>
 
-        {/* LOWER STRIP (adds depth + length) */}
-        <div className="mt-24 border-t border-white/10 pt-16 grid md:grid-cols-3 gap-10 text-center">
+        {/* LOWER STRIP */}
+        <div className="mt-24 md:mt-40 pt-16 md:pt-20 border-t border-deepBlue/5 grid md:grid-cols-3 gap-12 md:gap-16 text-left md:text-center">
 
           <div>
-            <p className="text-3xl font-semibold text-[#C6A96B]">UK</p>
-            <p className="text-gray-400 text-sm mt-2">
-              Chartered accounting expertise
-            </p>
+            <p className="text-sm tracking-[0.2em] font-medium text-deepBlue/40 uppercase mb-4">Focus</p>
+            <p className="text-2xl font-light text-deepBlue tracking-tight">Chartered UK expertise</p>
           </div>
 
           <div>
-            <p className="text-3xl font-semibold text-[#C6A96B]">Global</p>
-            <p className="text-gray-400 text-sm mt-2">
-              International clients supported
-            </p>
+            <p className="text-sm tracking-[0.2em] font-medium text-deepBlue/40 uppercase mb-4">Reach</p>
+            <p className="text-2xl font-light text-deepBlue tracking-tight">International support</p>
           </div>
 
           <div>
-            <p className="text-3xl font-semibold text-[#C6A96B]">Secure</p>
-            <p className="text-gray-400 text-sm mt-2">
-              Confidential financial handling
-            </p>
+            <p className="text-sm tracking-[0.2em] font-medium text-deepBlue/40 uppercase mb-4">Standard</p>
+            <p className="text-2xl font-light text-deepBlue tracking-tight">Confidential handling</p>
           </div>
 
         </div>

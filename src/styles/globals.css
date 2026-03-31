@@ -9,9 +9,8 @@ html {
 
 /* premium background */
 body {
-  background: #050505;
-  color: white;
-  font-family: ui-sans-serif, system-ui;
+  background: #F8F5F0;
+  color: #1E3A5F;
 }
 
 /* luxury container */
@@ -22,20 +21,21 @@ body {
   padding-right: 24px;
 }
 
-/* glow effect */
+/* glow effect -> soft shadow for light theme */
 .text-glow {
-  text-shadow: 0 0 40px rgba(255,255,255,0.25);
+  text-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
-/* gradient text */
+/* gradient text -> deep blue text or simple subtle gradient */
 .gradient-text {
-  background: linear-gradient(to bottom, #ffffff, #777777);
+  background: linear-gradient(to right, #1E3A5F, #2A4F7C);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
 :root {
-  --gold: #C6A96B;
-  --gold-soft: rgba(198,169,107,0.35);
+  --gold: #C8A96A;
+  --gold-soft: rgba(200, 169, 106, 0.35);
 }
 
 .gold-text {
@@ -47,8 +47,5 @@ body {
 }
 
 .gold-glow {
-  box-shadow: 0 0 80px rgba(198,169,107,0.15);
-}
-html {
-  scroll-behavior: smooth;
+  box-shadow: 0 4px 20px rgba(200, 169, 106, 0.15); /* Soft shadow instead of glow */
 }

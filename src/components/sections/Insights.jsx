@@ -22,12 +22,8 @@ export default function Insights() {
   ];
 
   return (
-    <section className="relative py-40 md:py-56 bg-[#050505] text-white overflow-hidden">
-
-      {/* subtle glow */}
-      <div className="absolute top-1/2 left-1/2 w-[900px] h-[900px] bg-[#C6A96B]/5 blur-[180px] rounded-full -translate-x-1/2 -translate-y-1/2" />
-
-      <div className="relative max-w-7xl mx-auto px-6">
+    <section id="insights" className="relative py-32 md:py-48 bg-creme text-deepBlue overflow-hidden">
+      <div className="relative max-w-7xl mx-auto px-6 lg:px-12">
 
         {/* header */}
         <motion.div
@@ -35,24 +31,26 @@ export default function Insights() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="max-w-2xl mb-20"
+          className="max-w-2xl mb-32"
         >
-          <p className="text-xs tracking-[0.35em] text-gray-500 uppercase mb-6">
+          <p className="text-deepBlue/50 font-medium text-xs tracking-[0.25em] uppercase mb-8">
             Insights
           </p>
 
-          <h2 className="text-4xl md:text-5xl font-semibold leading-tight">
-            Clarity beyond compliance.
+          <h2 className="text-5xl md:text-6xl font-medium leading-[1.1] tracking-tight font-heading">
+            Clarity beyond
+            <br />
+            compliance.
           </h2>
 
-          <p className="text-gray-400 mt-6 text-lg">
+          <p className="text-deepBlue/60 mt-8 text-xl font-light tracking-wide">
             Expert insights, tax updates, and strategic thinking for UK
             business owners and directors.
           </p>
         </motion.div>
 
         {/* grid */}
-        <div className="grid md:grid-cols-3 gap-10">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12 md:gap-16">
 
           {posts.map((post, i) => (
             <motion.article
@@ -61,37 +59,44 @@ export default function Insights() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.15, duration: 0.7 }}
-              className="group relative border border-white/10 rounded-2xl p-8 h-[320px] flex flex-col justify-between hover:border-white/20 transition"
+              onClick={() => {
+                const target = document.getElementById("contact");
+                if (target) target.scrollIntoView({ behavior: 'smooth' });
+              }}
+              className="group relative bg-white border border-deepBlue/5 p-10 h-[360px] flex flex-col justify-between hover:shadow-2xl hover:shadow-deepBlue/5 transition-all duration-500 cursor-pointer"
             >
               {/* category */}
-              <p className="text-xs tracking-widest text-gray-500 uppercase">
+              <p className="text-[11px] tracking-[0.2em] text-deepBlue/40 font-medium uppercase">
                 {post.category}
               </p>
 
               {/* title */}
-              <h3 className="text-xl font-medium mt-6 leading-snug group-hover:text-white transition">
+              <h3 className="text-2xl font-light mt-8 leading-snug tracking-tight font-heading text-deepBlue group-hover:text-deepBlue/80 transition-colors duration-300">
                 {post.title}
               </h3>
 
               {/* footer */}
-              <div className="flex items-center justify-between mt-10">
-                <span className="text-gray-500 text-sm">{post.date}</span>
+              <div className="flex items-center justify-between mt-auto pt-10 border-t border-deepBlue/5">
+                <span className="text-deepBlue/40 text-sm tracking-wide font-light">{post.date}</span>
 
-                <span className="text-xs tracking-widest text-gray-400 uppercase group-hover:text-white transition">
-                  Read
+                <span className="text-[11px] tracking-[0.2em] font-medium uppercase text-deepBlue group-hover:text-deepBlue/60 transition-colors duration-300">
+                  Read Article
                 </span>
               </div>
-
-              {/* hover glow */}
-              <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition pointer-events-none bg-gradient-to-br from-white/5 to-transparent" />
             </motion.article>
           ))}
 
         </div>
 
         {/* CTA */}
-        <div className="mt-24 text-center">
-          <button className="px-8 py-3 border border-white/20 rounded-full text-sm tracking-wide hover:bg-white hover:text-black transition">
+        <div className="mt-32 text-center">
+          <button 
+            onClick={() => {
+              const target = document.getElementById("insights");
+              if (target) target.scrollIntoView({ behavior: 'smooth' });
+            }}
+            className="px-10 py-5 rounded-full border border-deepBlue/20 text-sm font-medium tracking-wide text-deepBlue hover:bg-deepBlue hover:text-white transition-all duration-300 min-h-[56px]"
+          >
             View All Insights
           </button>
         </div>

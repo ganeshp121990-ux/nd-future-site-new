@@ -22,15 +22,15 @@ const steps = [
 
 export default function Process() {
   return (
-    <section id="process" className="bg-[#050505] text-white py-32 px-6">
+    <section id="process" className="bg-white text-deepBlue py-20 md:py-32 lg:py-48 px-6 lg:px-12">
       <div className="max-w-6xl mx-auto">
 
         {/* HEADER */}
-        <div className="text-center max-w-3xl mx-auto mb-24">
+        <div className="text-center max-w-4xl mx-auto mb-32">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            className="text-[#C6A96B] text-xs tracking-[0.3em] uppercase mb-6"
+            className="text-deepBlue/50 font-medium text-xs tracking-[0.25em] uppercase mb-8"
           >
             Our Process
           </motion.p>
@@ -38,7 +38,7 @@ export default function Process() {
           <motion.h2
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-5xl font-semibold leading-tight"
+            className="text-4xl md:text-5xl lg:text-6xl font-medium leading-[1.1] tracking-tight font-heading"
           >
             Structured. Transparent.
             <br />
@@ -48,15 +48,15 @@ export default function Process() {
           <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            className="mt-6 text-gray-400"
+            className="mt-8 text-deepBlue/60 text-xl font-light tracking-wide max-w-2xl mx-auto"
           >
-            We follow a clear, structured approach so international and UK
+            We follow a clean, structured approach so international and UK
             clients always know where they stand and what comes next.
           </motion.p>
         </div>
 
         {/* TIMELINE */}
-        <div className="relative border-l border-white/10 pl-10 space-y-20">
+        <div className="relative border-l border-deepBlue/10 pl-12 md:pl-20 space-y-20 md:space-y-32 ml-2 md:ml-12">
 
           {steps.map((step, i) => (
             <motion.div
@@ -64,16 +64,20 @@ export default function Process() {
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.1 }}
-              className="relative"
+              className="relative max-w-2xl"
             >
               {/* DOT */}
-              <div className="absolute -left-[24px] top-2 w-4 h-4 rounded-full bg-[#C6A96B]" />
+              <div className="absolute -left-[54px] md:-left-[86px] top-2 w-3 h-3 rounded-full bg-deepBlue" />
 
-              <h3 className="text-xl font-medium mb-3">
+              <p className="text-sm font-medium tracking-[0.2em] text-deepBlue/40 uppercase mb-4">
+                Phase 0{i + 1}
+              </p>
+              
+              <h3 className="text-3xl font-medium mb-4 font-heading text-deepBlue tracking-tight">
                 {step.title}
               </h3>
 
-              <p className="text-gray-400 text-sm leading-relaxed max-w-xl">
+              <p className="text-deepBlue/60 text-lg leading-relaxed font-light tracking-wide">
                 {step.desc}
               </p>
             </motion.div>
@@ -82,25 +86,25 @@ export default function Process() {
         </div>
 
         {/* BOTTOM STRIP */}
-        <div className="mt-28 grid md:grid-cols-3 gap-10 text-center border-t border-white/10 pt-16">
+        <div className="mt-24 md:mt-40 grid md:grid-cols-3 gap-12 md:gap-16 text-left border-t border-deepBlue/5 pt-16 md:pt-20">
 
           <div>
-            <p className="text-3xl font-semibold text-[#C6A96B]">01</p>
-            <p className="text-gray-400 text-sm mt-2">
+            <p className="text-3xl font-light text-deepBlue tracking-tight">01</p>
+            <p className="text-deepBlue/50 text-base mt-4 font-light tracking-wide">
               Clear onboarding process
             </p>
           </div>
 
           <div>
-            <p className="text-3xl font-semibold text-[#C6A96B]">02</p>
-            <p className="text-gray-400 text-sm mt-2">
+            <p className="text-3xl font-light text-deepBlue tracking-tight">02</p>
+            <p className="text-deepBlue/50 text-base mt-4 font-light tracking-wide">
               Direct partner communication
             </p>
           </div>
 
           <div>
-            <p className="text-3xl font-semibold text-[#C6A96B]">03</p>
-            <p className="text-gray-400 text-sm mt-2">
+            <p className="text-3xl font-light text-deepBlue tracking-tight">03</p>
+            <p className="text-deepBlue/50 text-base mt-4 font-light tracking-wide">
               Ongoing financial clarity
             </p>
           </div>
