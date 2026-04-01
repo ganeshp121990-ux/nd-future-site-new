@@ -24,7 +24,7 @@ export default function ContactSection() {
     "Wealth & Asset Management"
   ];
 
-  const timings = ["09:00 AM", "10:30 AM", "01:00 PM", "02:30 PM", "04:00 PM"];
+  const timings = ["09:00 AM", "10:30 AM", "01:00 PM", "02:30 PM", "04:00 PM", "05:30 PM", "07:00 PM", "08:30 PM"];
 
   const availableDays = useMemo(() => {
     let days = [];
@@ -60,7 +60,7 @@ export default function ContactSection() {
   return (
     <section id="contact" className="w-full bg-creme py-20 md:py-32 lg:py-48 px-6 lg:px-12">
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-20 items-center">
-        
+
         <div>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium mb-6 md:mb-8 tracking-tight font-heading text-deepBlue">
             Elevate Your Business.
@@ -82,10 +82,10 @@ export default function ContactSection() {
         </div>
 
         <div className="bg-white rounded-[2rem] p-6 sm:p-8 md:p-12 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.05)] border border-deepBlue/5 relative overflow-hidden">
-          
+
           {/* Progress Bar */}
           <div className="absolute top-0 left-0 w-full h-1 bg-deepBlue/5">
-            <div 
+            <div
               className="h-full bg-[#C5A059] transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)]"
               style={{ width: `${(step / 4) * 100}%` }}
             />
@@ -105,8 +105,8 @@ export default function ContactSection() {
               </p>
             </div>
             {step > 1 && step < 4 && (
-              <button 
-                onClick={() => setStep(step - 1)} 
+              <button
+                onClick={() => setStep(step - 1)}
                 className="text-[11px] uppercase tracking-widest text-deepBlue/40 hover:text-[#C5A059] transition-colors font-medium mt-1 flex items-center gap-1 group"
               >
                 <span className="transform -translate-x-1 group-hover:-translate-x-2 transition-transform">←</span>
@@ -120,14 +120,14 @@ export default function ContactSection() {
             {step === 1 && (
               <div className="space-y-3">
                 {services.map(s => (
-                  <button 
+                  <button
                     key={s}
-                    onClick={() => { setBooking({...booking, service: s}); setStep(2); }}
+                    onClick={() => { setBooking({ ...booking, service: s }); setStep(2); }}
                     className="w-full text-left p-5 rounded-2xl border border-deepBlue/10 hover:border-[#C5A059] hover:shadow-[0_8px_30px_-12px_rgba(197,160,89,0.25)] transition-all duration-300 flex justify-between items-center group bg-white"
                   >
                     <span className="font-medium text-deepBlue group-hover:text-[#C5A059] transition-colors">{s}</span>
                     <span className="text-[#C5A059] opacity-0 group-hover:opacity-100 transition-all duration-300 transform -translate-x-2 group-hover:translate-x-0">
-                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
                     </span>
                   </button>
                 ))}
@@ -141,23 +141,22 @@ export default function ContactSection() {
                   {availableDays.map(d => {
                     const isSelected = booking.date && booking.date.getTime() === d.getTime();
                     return (
-                      <button 
-                        key={d.toISOString()} 
-                        onClick={() => setBooking({...booking, date: d})}
-                        className={`p-3 sm:p-4 rounded-2xl border text-center transition-all duration-300 ${
-                          isSelected 
-                            ? 'border-[#C5A059] bg-[#C5A059]/5 shadow-inner' 
+                      <button
+                        key={d.toISOString()}
+                        onClick={() => setBooking({ ...booking, date: d })}
+                        className={`p-3 sm:p-4 rounded-2xl border text-center transition-all duration-300 ${isSelected
+                            ? 'border-[#C5A059] bg-[#C5A059]/5 shadow-inner'
                             : 'border-deepBlue/10 hover:border-deepBlue/30 hover:bg-deepBlue/[0.02]'
-                        }`}
+                          }`}
                       >
                         <div className={`text-[10px] uppercase tracking-widest mb-1 ${isSelected ? 'text-[#C5A059]' : 'text-deepBlue/50'}`}>
-                          {d.toLocaleDateString('en-US', {weekday: 'short'})}
+                          {d.toLocaleDateString('en-US', { weekday: 'short' })}
                         </div>
                         <div className={`text-2xl font-light ${isSelected ? 'text-[#C5A059]' : 'text-deepBlue'}`}>
                           {d.getDate()}
                         </div>
                         <div className={`text-xs mt-1 ${isSelected ? 'text-[#C5A059]/80' : 'text-deepBlue/50'}`}>
-                          {d.toLocaleDateString('en-US', {month: 'short'})}
+                          {d.toLocaleDateString('en-US', { month: 'short' })}
                         </div>
                       </button>
                     );
@@ -166,7 +165,7 @@ export default function ContactSection() {
 
                 {!showExtendedDates ? (
                   <div className="flex justify-center mb-8 -mt-2">
-                    <button 
+                    <button
                       onClick={() => setShowExtendedDates(true)}
                       className="text-[11px] uppercase tracking-widest text-deepBlue/40 hover:text-[#C5A059] transition-colors font-medium flex items-center gap-1 group"
                     >
@@ -176,7 +175,7 @@ export default function ContactSection() {
                   </div>
                 ) : (
                   <div className="flex justify-center mb-8 -mt-2">
-                    <button 
+                    <button
                       onClick={() => setShowExtendedDates(false)}
                       className="text-[11px] uppercase tracking-widest text-deepBlue/40 hover:text-[#C5A059] transition-colors font-medium flex items-center gap-1 group"
                     >
@@ -191,9 +190,9 @@ export default function ContactSection() {
                     <p className="text-xs uppercase tracking-widest text-deepBlue/50 mb-4 font-medium">Available Times</p>
                     <div className="grid grid-cols-2 gap-3">
                       {timings.map(t => (
-                        <button 
+                        <button
                           key={t}
-                          onClick={() => { setBooking({...booking, time: t}); setStep(3); }}
+                          onClick={() => { setBooking({ ...booking, time: t }); setStep(3); }}
                           className="py-3 px-4 text-sm rounded-xl border border-deepBlue/10 hover:border-[#C5A059] hover:bg-[#C5A059] hover:text-white transition-all duration-300 text-deepBlue font-medium tracking-wide flex justify-center items-center group"
                         >
                           {t}
@@ -209,7 +208,7 @@ export default function ContactSection() {
             {/* Step 3: Details form */}
             {step === 3 && (
               <form onSubmit={handleSubmit} className="space-y-6">
-                
+
                 {/* Summary Card */}
                 <div className="bg-deepBlue/[0.02] border border-deepBlue/10 p-5 rounded-2xl mb-8 flex flex-col gap-3 relative overflow-hidden">
                   <div className="absolute top-0 left-0 w-1 h-full bg-[#C5A059]" />
@@ -218,11 +217,11 @@ export default function ContactSection() {
                   </div>
                   <div className="flex items-center gap-5 text-xs text-deepBlue/70 pl-1 font-light tracking-wide">
                     <span className="flex items-center gap-1.5">
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                      {booking.date?.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric'})}
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2" /><line x1="16" y1="2" x2="16" y2="6" /><line x1="8" y1="2" x2="8" y2="6" /><line x1="3" y1="10" x2="21" y2="10" /></svg>
+                      {booking.date?.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' })}
                     </span>
                     <span className="flex items-center gap-1.5">
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg>
                       {booking.time}
                     </span>
                   </div>
@@ -294,10 +293,10 @@ export default function ContactSection() {
                 <p className="text-deepBlue/60 text-[15px] font-light max-w-[280px] leading-relaxed">
                   A calendar invitation has been sent to your email. We look forward to speaking with you.
                 </p>
-                <button 
+                <button
                   onClick={() => {
                     setStep(1);
-                    setBooking({service: "", date: null, time: "", name: "", email: "", phone: "", notes: ""});
+                    setBooking({ service: "", date: null, time: "", name: "", email: "", phone: "", notes: "" });
                   }}
                   className="mt-10 text-[11px] font-medium uppercase tracking-widest text-[#C5A059] hover:text-[#B5952F] transition-colors pb-1 border-b border-[#C5A059]/30 hover:border-[#C5A059]"
                 >

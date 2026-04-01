@@ -88,18 +88,6 @@ export default function Insights() {
 
         </div>
 
-        {/* CTA */}
-        <div className="mt-32 text-center">
-          <button 
-            onClick={() => {
-              const target = document.getElementById("insights");
-              if (target) target.scrollIntoView({ behavior: 'smooth' });
-            }}
-            className="px-10 py-5 rounded-full border border-deepBlue/20 text-sm font-medium tracking-wide text-deepBlue hover:bg-deepBlue hover:text-white transition-all duration-300 min-h-[56px]"
-          >
-            View All Insights
-          </button>
-        </div>
 
       </div>
     </section>
