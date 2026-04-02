@@ -21,8 +21,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${inter.variable} ${poppins.variable}`}>
-      <body className="bg-creme text-deepBlue font-body">
+    <html lang="en" className={`${inter.variable} ${poppins.variable} overflow-x-hidden`}>
+      <body className="bg-[#FDFCFB] text-[#0A1A2F] font-body overflow-x-hidden antialiased selection:bg-[#C8A96A]/30 selection:text-[#0A1A2F]">
         <SmoothScroll>{children}</SmoothScroll>
         <Cursor />
       </body>
