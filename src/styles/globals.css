@@ -52,3 +52,23 @@ body {
   box-shadow: 0 4px 20px rgba(200, 169, 106, 0.15);
   /* Soft shadow instead of glow */
 }
+
+@keyframes slowMove {
+  0% {
+    transform: translateY(0px);
+  }
+
+  100% {
+    transform: translateY(-40px);
+  }
+}
+
+@keyframes bgShift {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-30px);
+  }
+}

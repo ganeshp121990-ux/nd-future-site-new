@@ -96,7 +96,7 @@ export default function Navbar() {
                   key={item}
                   href={`#${id}`}
                   onClick={(e) => { e.preventDefault(); scrollTo(id); }}
-                  className="group relative py-1 font-body font-normal transition-all duration-500 ease-[cubic-bezier(0.2,1,0.2,1)]"
+                  className="group relative py-1 font-body font-normal transition-all duration-500 ease-[cubic-bezier(0.2,1,0.2,1)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C8A96A] focus-visible:ring-offset-2 rounded-sm"
                 >
                   {/* Label with upward micro-shift on hover */}
                   <span
@@ -121,7 +121,7 @@ export default function Navbar() {
           <button
             onClick={() => scrollTo("contact")}
             className="group relative hidden md:block px-7 py-[10px] bg-deepBlue text-white text-[12px] font-medium
-                       rounded-[6px] tracking-[0.04em] overflow-hidden
+                       rounded-[6px] tracking-[0.04em] overflow-hidden focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C8A96A] focus-visible:ring-offset-2
                        border border-white/[0.06]
                        transition-all duration-700 ease-[cubic-bezier(0.2,1,0.2,1)]
                        hover:scale-[1.02] hover:shadow-[0_12px_36px_-8px_rgba(30,58,95,0.22)]
@@ -139,7 +139,8 @@ export default function Navbar() {
           {/* ── Mobile Hamburger ── */}
           <button
             onClick={() => setMobileOpen((v) => !v)}
-            className="md:hidden relative z-[60] flex flex-col justify-center items-center w-10 h-10 gap-[5px]"
+            aria-expanded={mobileOpen}
+            className="md:hidden relative z-[60] flex flex-col justify-center items-center w-11 h-11 gap-[5px] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C8A96A] focus-visible:ring-offset-2 rounded-md"
             aria-label="Toggle menu"
           >
             <motion.span
@@ -206,7 +207,7 @@ export default function Navbar() {
                   setTimeout(() => scrollTo("contact"), 400);
                 }}
                 className="mt-4 px-8 py-[13px] bg-deepBlue text-white text-[13px] font-medium
-                           rounded-[7px] tracking-[0.04em] min-w-[220px]
+                           rounded-[7px] tracking-[0.04em] min-w-[220px] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C8A96A] focus-visible:ring-offset-2
                            transition-all duration-700 ease-[cubic-bezier(0.2,1,0.2,1)]
                            hover:scale-[1.02] active:scale-[0.985]"
               >

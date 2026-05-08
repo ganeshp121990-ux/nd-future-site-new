@@ -8,6 +8,7 @@ import {
   useMotionValue,
   useAnimationFrame,
 } from "framer-motion";
+import { useRouter } from "next/navigation";
 
 /* ─────────────────────────────────────────────────────────────
    HERO — "Precision Focus System"
@@ -17,7 +18,13 @@ import {
 
 const EASE = [0.2, 1, 0.2, 1];
 
+const scrollTo = (id) => {
+  const el = document.getElementById(id);
+  if (el) el.scrollIntoView({ behavior: "smooth" });
+};
+
 export default function Hero() {
+  const router = useRouter();
   const sectionRef = useRef(null);
   const [phase, setPhase] = useState(0);
   // 0 = blurred / waiting
@@ -110,7 +117,7 @@ export default function Hero() {
             loop
             muted
             playsInline
-            className="w-full h-full object-cover mix-blend-multiply opacity-[0.40] contrast-[1.08] saturate-[0.85]"
+            className="w-full h-full object-cover mix-blend-multiply opacity-[0.28] contrast-[1.05] saturate-[0.75]"
           >
             <source src="/hero-video.mp4" type="video/mp4" />
           </video>
@@ -210,7 +217,7 @@ export default function Hero() {
         >
           <span className="h-px w-6 md:w-12 bg-deepBlue/15" />
           <p className="text-deepBlue/70 font-medium text-[11px] md:text-[10px] uppercase tracking-[0.4em] font-body">
-            Designing Financial Clarity for What's Next
+            AAT Licensed Accountants & UK Business Advisory
           </p>
           <span className="h-px w-6 md:w-12 bg-deepBlue/15" />
         </motion.div>
@@ -228,12 +235,11 @@ export default function Hero() {
             y: { duration: 1.4, ease: EASE, delay: headDelay },
             scale: { duration: 2.2, ease: EASE, delay: headDelay },
           }}
-          className="text-[30px] sm:text-5xl md:text-7xl lg:text-[70px] font-medium leading-[1.04] tracking-[-0.015em] text-deepBlue font-heading mb-8 md:mb-10"
+          className="text-[30px] sm:text-5xl md:text-6xl lg:text-[64px] font-semibold leading-[1.04] tracking-[-0.02em] text-deepBlue font-heading mb-8 md:mb-10"
         >
-          SMART ACCOUNTING
-          <br className="hidden md:block" />
+          Strategic Accounting &<br className="hidden md:block" />
           <span className="relative inline-block overflow-hidden">
-            <span className="relative z-10"> FOR SCALING BUSINESSES</span>
+            <span className="relative z-10"> Talent Solutions for UK Growth</span>
             {/* Natural light reflection sweep — very subtle */}
             <motion.span
               initial={{ x: "-120%" }}
@@ -259,35 +265,30 @@ export default function Hero() {
           initial={{ opacity: 0, y: 18 }}
           animate={phase === 2 ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 1.4, ease: EASE, delay: subDelay }}
-          className="text-deepBlue/65 text-[15px] md:text-[18px] lg:text-[20px] font-light max-w-[580px] mx-auto font-body leading-[1.7] tracking-[0.01em] mb-14 md:mb-16"
+          className="text-deepBlue/80 text-[15px] md:text-[18px] lg:text-[20px] font-normal max-w-[620px] mx-auto font-body leading-[1.7] tracking-[0.01em] mb-6 md:mb-8"
         >
-          A future-focused UK accounting firm helping modern businesses move
-          with precision, confidence, and intelligent control.
+          Professional bookkeeping, tax compliance, and Recruitment Process Outsourcing (RPO) delivered by AAT Licensed Accountants.
         </motion.p>
-
         {/* ── CTA Buttons — tactile, premium ── */}
         <motion.div
           initial={{ opacity: 0, y: 14 }}
           animate={phase === 2 ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 1.4, ease: EASE, delay: ctaDelay }}
-          className="flex flex-col sm:flex-row gap-4 sm:gap-5 justify-center items-center"
+          className="flex flex-col sm:flex-row gap-4 sm:gap-5 mt-8 md:mt-10 justify-center items-center"
         >
           {/* Primary */}
           <button
-            onClick={() => {
-              const el = document.getElementById("contact");
-              if (el) el.scrollIntoView({ behavior: "smooth" });
-            }}
+            onClick={() => scrollTo("contact")}
             className="group relative px-9 py-[14px] bg-deepBlue text-white text-[13px] font-medium
                        rounded-[7px] min-w-[200px] tracking-[0.04em] overflow-hidden
-                       border border-white/[0.06]
+                       border border-white/[0.06] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C8A96A] focus-visible:ring-offset-2
                        transition-all duration-700 ease-[cubic-bezier(0.2,1,0.2,1)]
-                       hover:scale-[1.02] hover:shadow-[0_14px_44px_-10px_rgba(30,58,95,0.26)]
+                       hover:scale-[1.02] shadow-md hover:shadow-[0_18px_50px_-10px_rgba(30,58,95,0.32)]
                        active:scale-[0.985]"
           >
             <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/[0.1] to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-[1100ms] ease-[cubic-bezier(0.2,1,0.2,1)]" />
             <span className="relative z-10 flex items-center justify-center gap-2">
-              Book Consultation
+              Book a Free Consultation
               <svg
                 className="w-3.5 h-3.5 opacity-70 transition-transform duration-700 ease-[cubic-bezier(0.2,1,0.2,1)] group-hover:translate-x-1"
                 fill="none"
@@ -306,13 +307,10 @@ export default function Hero() {
 
           {/* Secondary */}
           <button
-            onClick={() => {
-              const el = document.getElementById("services");
-              if (el) el.scrollIntoView({ behavior: "smooth" });
-            }}
+            onClick={() => scrollTo("services")}
             className="group relative px-9 py-[14px] text-deepBlue text-[13px] font-medium
                        rounded-[7px] min-w-[200px] tracking-[0.04em] overflow-hidden
-                       border border-deepBlue/[0.12]
+                       border border-deepBlue/[0.20] focus:outline-none focus-visible:ring-2 focus-visible:ring-deepBlue focus-visible:ring-offset-2
                        transition-all duration-700 ease-[cubic-bezier(0.2,1,0.2,1)]
                        hover:scale-[1.02] hover:border-deepBlue/25 hover:bg-deepBlue/[0.02]
                        active:scale-[0.985]"
@@ -322,25 +320,59 @@ export default function Hero() {
           </button>
         </motion.div>
 
+
+
+
+
+
         {/* ── Trust footer ── */}
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={phase === 2 ? { opacity: 1 } : {}}
-          transition={{ duration: 1.8, ease: EASE, delay: trustDelay }}
-          className="mt-24 md:mt-36 pt-7 flex justify-center relative"
+          initial={{ opacity: 0, y: 20 }}
+          animate={phase === 2 ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 1.2, ease: EASE, delay: trustDelay }}
+          className="mt-16 flex justify-center"
         >
-          <span className="absolute top-0 left-1/2 -translate-x-1/2 w-2/3 max-w-xs h-px bg-gradient-to-r from-transparent via-deepBlue/50 to-transparent" />
-          <p className="text-[9px] md:text-[10px] tracking-[0.35em] text-deepBlue/70 uppercase font-medium font-body flex gap-4 md:gap-7 flex-wrap justify-center">
-            <span>Tax</span>
-            <span className="opacity-50">•</span>
-            <span>Compliance</span>
-            <span className="opacity-50">•</span>
-            <span>Advisory</span>
-            <span className="opacity-50">•</span>
-            <span>Growth</span>
-          </p>
+          <div className="flex flex-wrap justify-center items-center gap-4 md:gap-6">
+
+            {/* AAT */}
+            <div className="flex items-center gap-3 px-5 py-3 rounded-xl bg-white border border-gray-200 shadow-sm hover:shadow-md transition">
+              <img src="/logos/aat.svg" className="h-7 w-auto" />
+              <div className="text-left leading-tight">
+                <p className="text-[11px] font-semibold text-deepBlue">AAT</p>
+                <p className="text-[10px] text-gray-500">LICENSED MEMBER</p>
+              </div>
+            </div>
+
+            {/* ICO */}
+            <div className="flex items-center gap-3 px-5 py-3 rounded-xl bg-white border border-gray-200 shadow-sm hover:shadow-md transition">
+              <img src="/logos/ico.svg" className="h-7 w-auto" />
+              <div className="text-left leading-tight">
+                <p className="text-[11px] font-semibold text-deepBlue">ICO</p>
+                <p className="text-[10px] text-gray-500">REGISTERED</p>
+              </div>
+            </div>
+
+            {/* XERO */}
+            <div className="flex items-center gap-3 px-5 py-3 rounded-xl bg-white border border-gray-200 shadow-sm hover:shadow-md transition">
+              <img src="/logos/xero.svg" className="h-7 w-auto" />
+              <div className="text-left leading-tight">
+                <p className="text-[11px] font-semibold text-deepBlue">Xero</p>
+                <p className="text-[10px] text-gray-500">PARTNER</p>
+              </div>
+            </div>
+
+            {/* QUICKBOOKS */}
+            <div className="flex items-center gap-3 px-5 py-3 rounded-xl bg-white border border-gray-200 shadow-sm hover:shadow-md transition">
+              <img src="/logos/quickbooks.svg" className="h-7 w-auto" />
+              <div className="text-left leading-tight">
+                <p className="text-[11px] font-semibold text-deepBlue">QuickBooks</p>
+                <p className="text-[10px] text-gray-500">PARTNER</p>
+              </div>
+            </div>
+
+          </div>
         </motion.div>
       </motion.div>
-    </section>
+    </section >
   );
 }
