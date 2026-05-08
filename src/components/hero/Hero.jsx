@@ -329,7 +329,7 @@ export default function Hero() {
 
             {/* AAT */}
             <div className="flex items-center gap-3 px-5 py-3 rounded-xl bg-white border border-gray-200 shadow-sm hover:shadow-md transition">
-              <img src="/logo/aat_v2.svg?v=1" className="h-7 w-auto" />
+              <img src="/logos/aat.svg" className="h-7 w-auto" />
               <div className="text-left leading-tight">
                 <p className="text-[11px] font-semibold text-deepBlue">AAT</p>
                 <p className="text-[10px] text-gray-500">LICENSED MEMBER</p>
@@ -338,7 +338,7 @@ export default function Hero() {
 
             {/* ICO */}
             <div className="flex items-center gap-3 px-5 py-3 rounded-xl bg-white border border-gray-200 shadow-sm hover:shadow-md transition">
-              <img src="/logo/ico_v2.svg?v=1" className="h-7 w-auto" />
+              <img src="/logos/ico.svg" className="h-7 w-auto" />
               <div className="text-left leading-tight">
                 <p className="text-[11px] font-semibold text-deepBlue">ICO</p>
                 <p className="text-[10px] text-gray-500">REGISTERED</p>
@@ -347,7 +347,7 @@ export default function Hero() {
 
             {/* XERO */}
             <div className="flex items-center gap-3 px-5 py-3 rounded-xl bg-white border border-gray-200 shadow-sm hover:shadow-md transition">
-              <img src="/logo/xero_v2.svg?v=1" className="h-7 w-auto" />
+              <img src="/logos/xero.svg" className="h-7 w-auto" />
               <div className="text-left leading-tight">
                 <p className="text-[11px] font-semibold text-deepBlue">Xero</p>
                 <p className="text-[10px] text-gray-500">PARTNER</p>
@@ -356,7 +356,7 @@ export default function Hero() {
 
             {/* QUICKBOOKS */}
             <div className="flex items-center gap-3 px-5 py-3 rounded-xl bg-white border border-gray-200 shadow-sm hover:shadow-md transition">
-              <img src="/logo/quickbooks_v2.svg?v=1" className="h-7 w-auto" />
+              <img src="/logos/quickbooks.svg" className="h-7 w-auto" />
               <div className="text-left leading-tight">
                 <p className="text-[11px] font-semibold text-deepBlue">QuickBooks</p>
                 <p className="text-[10px] text-gray-500">PARTNER</p>
